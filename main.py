@@ -1,7 +1,9 @@
 import mysql.connector
+import pandas as pd
 
-file = open('/Users/giovannisalvi/PycharmProjects/Code-challenge/source/data.txt', 'r')
-fileLines = file.read()
+df = pd.read_csv("/workspace/Code-challenge/cru-ts-2-10.1991-2000-cutdown.txt")
+df.T.to_csv('result.csv', header=False)
+print(df)
 #fileLines = fileLines.rstrip("\\n")
 character1 = ","
 fileString = fileLines.replace(character1, " ")
